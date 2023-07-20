@@ -16,7 +16,7 @@ end
 
 def decode_word(word)
   de_word = ''
-  word.split(' ').each do |char|
+  word.split.each do |char|
     de_word << decode_char(char)
   end
   de_word
@@ -28,7 +28,7 @@ def decode(message)
     de_message << decode_word(word)
     de_message << ' ' unless word == message.split('  ').last # Add space between words except for the last one
   end
-  print de_message
+  puts de_message
 end
 
 decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
